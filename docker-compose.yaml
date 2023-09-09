@@ -12,9 +12,25 @@ services:
       - 443:443
     volumes:
       - ./nginx-config:/etc/nginx
-      - ./letsencrypt:/etc/letsencrypt
+      - letsenrypt:/etc/letsencrypt
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
         max-file: "5"
+  certbot:
+    env_file:
+      - project.env
+    image: certbot/certbot
+    restart: no
+    container_name: certbot
+    volumes:
+      - letsenrypt:/etc/letsencrypt
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+volumes:
+  letsenrypt:

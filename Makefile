@@ -20,6 +20,12 @@ help:
 	@echo
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(firstword $(MAKEFILE_LIST)) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+cleanup:
+	@bash ./scripts/cleanup.sh
+
+soft-cleanup:
+	@bash ./scripts/soft-cleanup.sh
+
 .ONESHELL:
 check-project-env-vars:
 	@bash ./devops/local/scripts/check-project-env-vars.sh
@@ -42,11 +48,38 @@ restart: check-project-env-vars ## restart all
 	@docker compose up --build --remove-orphans -d
 	@docker compose logs --follow
 
+.ONESHELL:
+restart-nrp: check-project-env-vars ## restart all
+	@docker compose down
+	@docker compose up --build --remove-orphans -d nginx-reverse-proxy
+	@docker compose logs --follow
+
 exec-bash: ## get shell for svc=<svc-name> container
 	@docker exec -it ${svc} bash
 
 test-nginx-config: ## get shell for svc=<svc-name> container
 	@docker run -it ${IMAGE_NAME}:${IMAGE_TAG} nginx -t
+
+# Certbot
+
+# baseDir - path in docker volume
+.ONESHELL:
+certbot-request-cert: baseDir=/etc/letsencrypt
+certbot-request-cert: ## get certificates for domain=<domain-name.tld>, cert-name=<nrp-X>, email=<e@ma.il>
+	docker volume create letsencrypt
+	docker compose run nginx-reverse-proxy sh -c "mkdir -p ${baseDir}/acme-challenge"
+	docker compose run certbot certonly --non-interactive --webroot --cert-name "${cert-name}" \
+		--agree-tos --email "${email}" --domains "${domain}" \
+		--webroot-path ${baseDir}/acme-challenge \
+		--cert-path ${baseDir} \
+		--config-dir ${baseDir} \
+		--work-dir ${baseDir} \
+		--logs-dir ${baseDir}
+
+certbot-renew-cert: ## get certificates for domain=<domain-name.tld>
+	@docker compose run certbot renew
+
+# NRP image
 
 build:
 	@docker build --load -f ./Dockerfile -t ${IMAGE_NAME}:${IMAGE_TAG} --platform linux/arm64 .
