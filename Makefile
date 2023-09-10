@@ -8,10 +8,10 @@ BOLD_ON=\033[1m
 BOLD_OFF=\033[21m
 CLEAR=\033[2J
 
-include ./devops/envs/deployment.env
+include ./.devops/envs/deployment.env
 include project.env
 export $(shell sed 's/=.*//' project.env)
-export $(shell sed 's/=.*//' ./devops/envs/deployment.env)
+export $(shell sed 's/=.*//' ./.devops/envs/deployment.env)
 
 .PHONY: help
 
@@ -20,15 +20,16 @@ help:
 	@echo
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(firstword $(MAKEFILE_LIST)) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+# Docker
 cleanup:
-	@bash ./scripts/cleanup.sh
+	@bash ./scripts/docker-cleanup.bash
 
 soft-cleanup:
-	@bash ./scripts/soft-cleanup.sh
+	@bash ./scripts/docker-soft-cleanup.bash
 
 .ONESHELL:
 check-project-env-vars:
-	@bash ./devops/local/scripts/check-project-env-vars.sh
+	@bash ./.devops/local/scripts/check-project-env-vars.sh
 
 logs: ## docker logs
 	@docker compose logs --follow
