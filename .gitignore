@@ -18,3 +18,9 @@ logs/*
 node_modules/
 devops/version/
 tmp
+nrp.yaml
+conf.d
+conf.available
+letsencrypt
+.history
+.DS_Store

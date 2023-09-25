@@ -4,6 +4,8 @@ services:
   nginx-reverse-proxy:
     env_file:
       - project.env
+    environment:
+      - TZ=Europe/Madrid
     image: tuiteraz/nginx-reverse-proxy:1.0
     restart: unless-stopped
     container_name: nginx-reverse-proxy
@@ -12,9 +14,10 @@ services:
       - 443:443
     volumes:
       - ./nginx-config:/etc/nginx
+      - ./nrp.yaml:/etc/nrp.yaml
+      - letsencrypt:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
-      - letsenrypt:/etc/letsencrypt
-#      - ./supervisord:/etc/supervisor
+      # - ./letsencrypt:/etc/letsencrypt
 #      - ./cron/crontab:/etc/crontabs/root
     logging:
       driver: "json-file"
@@ -23,4 +26,4 @@ services:
         max-file: "5"
 
 volumes:
-  letsenrypt:
+  letsencrypt:
