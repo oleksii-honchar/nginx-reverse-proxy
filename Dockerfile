@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:experimental
-FROM tuiteraz/nginx-more:latest
+FROM tuiteraz/nginx-more:1.25.2
 
 RUN apk add --no-cache \
     certbot py3-pip \
@@ -19,13 +19,19 @@ RUN chmod +x /usr/local/bin/prefix-log-certbot
 COPY ./cron/crontab /etc/crontabs/root
 RUN chmod 0644 /etc/crontabs/root
 
+# Nginx config
+COPY ./nginx-config /etc/nginx
+
 EXPOSE 80 443
 
 COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-COPY ./nrp-cli-linux /usr/local/bin/nrp-cli
-RUN chmod +x /usr/local/bin/nrp-cli
+RUN wget https://github.com/oleksii-honchar/nrp-cli/releases/download/v0.2.0/nrp-cli-linux-v0.2.0.tar.gz && \
+    tar xzvf nrp-cli-linux-v0.2.0.tar.gz && \
+    cp ./nrp-cli-linux /usr/local/bin/nrp-cli &&\
+    chmod +x /usr/local/bin/nrp-cli &&\
+    rm nrp-cli-linux-v0.2.0.tar.gz nrp-cli-linux
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["/usr/sbin/nginx"]
