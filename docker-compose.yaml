@@ -2,8 +2,6 @@ version: '3.8'
 
 services:
   nginx-reverse-proxy:
-    env_file:
-      - project.env
     environment:
       - TZ=Europe/Madrid
     image: tuiteraz/nginx-reverse-proxy:0.1.1

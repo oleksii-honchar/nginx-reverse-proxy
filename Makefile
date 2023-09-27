@@ -9,8 +9,6 @@ BOLD_OFF=\033[21m
 CLEAR=\033[2J
 
 include ./.devops/envs/deployment.env
-include project.env
-export $(shell sed 's/=.*//' project.env)
 export $(shell sed 's/=.*//' ./.devops/envs/deployment.env)
 
 LATEST_VERSION := $(shell cat ./latest-version.txt)
@@ -39,14 +37,14 @@ logs: ## docker logs
 log: ## docker log for svc=<docker service name>
 	@docker compose logs --follow ${svc}
 
-up: check-project-env-vars ## docker up, or svc=<svc-name>
+up:  ## docker up, or svc=<svc-name>
 	@docker compose up --build --remove-orphans -d ${svc}
 
-down: check-project-env-vars ## docker down, or svc=<svc-name>
+down:  ## docker down, or svc=<svc-name>
 	@docker compose down ${svc}
 
 .ONESHELL:
-restart: check-project-env-vars ## restart all
+restart:  ## restart all
 	@docker compose down
 	@docker compose up --build --remove-orphans -d
 	@docker compose logs --follow
@@ -60,11 +58,11 @@ test-nginx-config: ## get shell for svc=<svc-name> container
 # NRP image
 
 build:
-	@docker build --load -f ./Dockerfile -t ${IMAGE_NAME}:$(LATEST_VERSION) --platform linux/arm64 .
+	docker build --load -f ./Dockerfile -t ${IMAGE_NAME}:$(LATEST_VERSION) --platform linux/arm64 .
 
-tag-latest: check-project-env-vars
-	@docker tag ${IMAGE_NAME}:${IMAGE_TAG} tuiteraz/squid:latest
+tag-latest: 
+	@docker tag ${IMAGE_NAME}:$(LATEST_VERSION) ${IMAGE_NAME}:latest
 
-push: check-project-env-vars
-	@docker push docker.io/${IMAGE_NAME}:${IMAGE_TAG}
+push: 
+	@docker push docker.io/${IMAGE_NAME}:$(LATEST_VERSION)
 	@docker push docker.io/${IMAGE_NAME}:latest
