@@ -52,8 +52,11 @@ restart:  ## restart all
 exec-bash: ## get shell for svc=<svc-name> container
 	@docker exec -it ${svc} bash
 
+run-bash: ## run bash
+	docker run -it ${IMAGE_NAME}:$(LATEST_VERSION) bash
+
 test-nginx-config: ## get shell for svc=<svc-name> container
-	@docker run -it ${IMAGE_NAME}:${IMAGE_TAG} nginx -t
+	@docker run -it ${IMAGE_NAME}:$(LATEST_VERSION) nginx -t
 
 # NRP image
 
