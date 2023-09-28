@@ -2,30 +2,19 @@ version: '3.8'
 
 services:
   nginx-reverse-proxy:
-    env_file:
-      - project.env
-    image: tuiteraz/nginx-reverse-proxy:1.0
+    environment:
+      - TZ=Europe/Madrid
+    image: tuiteraz/nginx-reverse-proxy:${LATEST_VERSION}
     restart: unless-stopped
     container_name: nginx-reverse-proxy
     ports:
       - 80:80
       - 443:443
     volumes:
-      - ./nginx-config:/etc/nginx
-      - letsenrypt:/etc/letsencrypt
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "5"
-  certbot:
-    env_file:
-      - project.env
-    image: certbot/certbot
-    restart: no
-    container_name: certbot
-    volumes:
-      - letsenrypt:/etc/letsencrypt
+      - ./nrp.yaml:/etc/nrp.yaml
+      - letsencrypt:/etc/letsencrypt
+      - /etc/localtime:/etc/localtime:ro
+      # - ./nginx-config:/etc/nginx
     logging:
       driver: "json-file"
       options:
@@ -33,4 +22,4 @@ services:
         max-file: "5"
 
 volumes:
-  letsenrypt:
+  letsencrypt:
