@@ -1,10 +1,7 @@
 # syntax = docker/dockerfile:experimental
-FROM tuiteraz/nginx-more:1.25.2
+FROM tuiteraz/nginx-more:1.25.2-2
 
-RUN apk add --no-cache \
-    certbot py3-pip \
-    tzdata \
-    bash
+RUN apk add --no-cache certbot py3-pip bash
 
 # Certbot
 RUN pip3 install --upgrade pyOpenSSL

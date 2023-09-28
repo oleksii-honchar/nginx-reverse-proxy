@@ -11,7 +11,7 @@ CLEAR=\033[2J
 include ./.devops/envs/deployment.env
 export $(shell sed 's/=.*//' ./.devops/envs/deployment.env)
 
-LATEST_VERSION := $(shell cat ./latest-version.txt)
+export LATEST_VERSION=$(shell cat ./latest-version.txt)
 
 .PHONY: help
 

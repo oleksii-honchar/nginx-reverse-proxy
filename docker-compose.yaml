@@ -4,7 +4,7 @@ services:
   nginx-reverse-proxy:
     environment:
       - TZ=Europe/Madrid
-    image: tuiteraz/nginx-reverse-proxy:0.1.1
+    image: tuiteraz/nginx-reverse-proxy:${LATEST_VERSION}
     restart: unless-stopped
     container_name: nginx-reverse-proxy
     ports:
