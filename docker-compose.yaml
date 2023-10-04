@@ -2,6 +2,8 @@ version: '3.8'
 
 services:
   nginx-reverse-proxy:
+    env_file:
+      - project.env
     environment:
       - TZ=Europe/Madrid
     image: tuiteraz/nginx-reverse-proxy:${LATEST_VERSION}
@@ -14,12 +16,83 @@ services:
       - ./nrp.yaml:/etc/nrp.yaml
       - letsencrypt:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
-      # - ./nginx-config:/etc/nginx
+      # - ./configs/nginx:/etc/nginx
+    networks:
+      multi-proxy:
+        ipv4_address: ${NGINX_REVERSE_PROXY_IP}
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
         max-file: "5"
 
+  dnsmasq:
+    env_file:
+      - project.env
+    image: 4km3/dnsmasq:2.85-r2
+    platform: linux/aarch64 # m1/m2 mac
+    container_name: dnsmasq
+    volumes:
+      - ./configs/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf
+    networks:
+      multi-proxy:
+        ipv4_address: ${DNSMASQ_IP}
+    cap_add:
+      - NET_ADMIN
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  squid:
+    env_file:
+      - project.env
+    image: tuiteraz/squid:5.9
+    platform: linux/aarch64 # m1/m2 mac
+    container_name: squid
+    user: root
+    volumes:
+      - ./configs/squid/squid.conf:/etc/squid/squid.conf
+    networks:
+      multi-proxy:
+        ipv4_address: ${SQUID_IP}
+    ports:
+      - ${SQUID_PORT}:${SQUID_PORT}
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  cadvisor:
+    env_file:
+      - project.env
+    image: tuiteraz/cadvisor:0.47.2
+    platform: linux/aarch64 # m1/m2 mac
+    devices:
+      - /dev/kmsg:/dev/kmsg
+    container_name: cadvisor
+    privileged: true
+    ports:
+      - 4082:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro # for docker socket
+      - /var/folders:/var/lib/docker:ro # directory, which contains Docker's data
+      - /dev/disk0:/dev/disk # This directory, where disk I/O stats are available: diskutil list
+      - /etc/machine-id:/etc/machine-id:ro
+      - /var/lib/dbus/machine-id:/var/lib/dbus/machine-id:ro
+    networks:
+      multi-proxy:
+        ipv4_address: ${CADVISOR_IP}
+    restart: unless-stopped
+
+networks:
+  multi-proxy:
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SERVICES_SUBNET}/20
 volumes:
   letsencrypt:

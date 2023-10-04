@@ -24,3 +24,6 @@ conf.available
 letsencrypt
 .history
 .DS_Store
+
+dnsmasq.conf
+squid.conf

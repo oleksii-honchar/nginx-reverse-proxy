@@ -13,11 +13,11 @@ COPY ./prefix-log-certbot.bash /usr/local/bin/prefix-log-certbot
 RUN chmod +x /usr/local/bin/prefix-log-certbot
 
 # Cron
-COPY ./cron/crontab /etc/crontabs/root
+COPY ./configs/cron/crontab /etc/crontabs/root
 RUN chmod 0644 /etc/crontabs/root
 
 # Nginx config
-COPY ./nginx-config /etc/nginx
+COPY ./configs/nginx /etc/nginx
 
 EXPOSE 80 443
 
