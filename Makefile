@@ -58,11 +58,19 @@ restart: check-project-env-vars generate-config ## restart all
 exec-bash: check-project-env-vars ## get shell for svc=<svc-name> container
 	@docker exec -it ${svc} bash
 
-run-bash: check-project-env-vars ## run bash
+exec-sh: check-project-env-vars ## get shell for svc=<svc-name> container
+	@docker exec -it ${svc} sh
+
+run-nrp-bash: check-project-env-vars ## run NRP bash
 	docker run -it $(IMAGE_NAME):$(LATEST_VERSION) bash
 
 test-nginx-config: check-project-env-vars ## text nginx config
 	@docker run -it $(IMAGE_NAME):$(LATEST_VERSION) nginx -t
+
+# To get <volume-name> use `docker volume ls`
+# make run-volume name=nginx-reverse-proxy_letsencrypt
+run-volume: ## run container to check volume content for name=<volume-name>
+	docker run -it --rm -v $(name):/volume-data --name volume-check busybox
 
 # NRP image
 

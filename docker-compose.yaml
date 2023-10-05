@@ -1,25 +1,26 @@
-version: '3.8'
+version: '3'
 
 services:
-  nginx-reverse-proxy:
+  nrp:
     env_file:
       - project.env
     environment:
       - TZ=Europe/Madrid
+      - CERTBOT_WAIT=false
     image: tuiteraz/nginx-reverse-proxy:${LATEST_VERSION}
+    platform: linux/aarch64 # m1/m2 mac
     restart: unless-stopped
-    container_name: nginx-reverse-proxy
+    container_name: nrp
     ports:
       - 80:80
       - 443:443
     volumes:
       - ./nrp.yaml:/etc/nrp.yaml
-      - letsencrypt:/etc/letsencrypt
+      - letsencrypt1:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
       # - ./configs/nginx:/etc/nginx
     networks:
       multi-proxy:
-        ipv4_address: ${NGINX_REVERSE_PROXY_IP}
     logging:
       driver: "json-file"
       options:
@@ -36,7 +37,6 @@ services:
       - ./configs/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf
     networks:
       multi-proxy:
-        ipv4_address: ${DNSMASQ_IP}
     cap_add:
       - NET_ADMIN
     logging:
@@ -48,7 +48,7 @@ services:
   squid:
     env_file:
       - project.env
-    image: tuiteraz/squid:5.9
+    image: tuiteraz/squid:5.9.0-1
     platform: linux/aarch64 # m1/m2 mac
     container_name: squid
     user: root
@@ -56,9 +56,10 @@ services:
       - ./configs/squid/squid.conf:/etc/squid/squid.conf
     networks:
       multi-proxy:
-        ipv4_address: ${SQUID_IP}
     ports:
       - ${SQUID_PORT}:${SQUID_PORT}
+    depends_on: 
+      - dnsmasq
     logging:
       driver: json-file
       options:
@@ -85,14 +86,12 @@ services:
       - /var/lib/dbus/machine-id:/var/lib/dbus/machine-id:ro
     networks:
       multi-proxy:
-        ipv4_address: ${CADVISOR_IP}
     restart: unless-stopped
 
 networks:
   multi-proxy:
-    ipam:
-      driver: default
-      config:
-        - subnet: ${SERVICES_SUBNET}/20
+    driver: bridge
+
 volumes:
   letsencrypt:
+  letsencrypt1:

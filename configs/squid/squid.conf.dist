@@ -4,7 +4,8 @@ http_port $SQUID_PORT
 # We setup an ACL that matches all IP addresses
 acl all src all
 
-dns_nameservers $DNSMASQ_IP
+# Will be inserted by script on start (entrypoint.sh)
+# dns_nameservers $DNSMASQ_CONTAINER_IP
 
 # We allow all of our clients to browse the Internet
 http_access allow all

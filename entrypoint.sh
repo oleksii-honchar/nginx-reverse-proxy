@@ -7,6 +7,8 @@ cat < $DOCKER_LOG_PIPE > /dev/stdout &
 
 /usr/sbin/crond -l 9
 
-/usr/local/bin/nrp-cli -config=/etc/nrp.yaml -log-level=debug
+value="${CERTBOT_WAIT:-false}"
+
+/usr/local/bin/nrp-cli -config=/etc/nrp.yaml -log-level=debug -certbot-wait=$value
 
 exec "$@"

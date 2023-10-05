@@ -24,7 +24,7 @@ EXPOSE 80 443
 COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
-ENV NRP_CLI_VER=v0.3.0
+ENV NRP_CLI_VER=v0.4.1
 RUN wget https://github.com/oleksii-honchar/nrp-cli/releases/download/$NRP_CLI_VER/nrp-cli-linux-$NRP_CLI_VER.tar.gz && \
     tar xzvf nrp-cli-linux-$NRP_CLI_VER.tar.gz && \
     cp ./nrp-cli-linux /usr/local/bin/nrp-cli &&\
