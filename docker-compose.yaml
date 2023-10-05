@@ -14,54 +14,18 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 3128:3128
     volumes:
       - ./nrp.yaml:/etc/nrp.yaml
-      - letsencrypt1:/etc/letsencrypt
+      - letsencrypt:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
-      # - ./configs/nginx:/etc/nginx
-    networks:
-      multi-proxy:
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "5"
-
-  dnsmasq:
-    env_file:
-      - project.env
-    image: 4km3/dnsmasq:2.85-r2
-    platform: linux/aarch64 # m1/m2 mac
-    container_name: dnsmasq
-    volumes:
-      - ./configs/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf
+      # - ./nrp-cli-linux:/usr/local/bin/nrp-cli
     networks:
       multi-proxy:
     cap_add:
       - NET_ADMIN
     logging:
       driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "5"
-
-  squid:
-    env_file:
-      - project.env
-    image: tuiteraz/squid:5.9.0-1
-    platform: linux/aarch64 # m1/m2 mac
-    container_name: squid
-    user: root
-    volumes:
-      - ./configs/squid/squid.conf:/etc/squid/squid.conf
-    networks:
-      multi-proxy:
-    ports:
-      - ${SQUID_PORT}:${SQUID_PORT}
-    depends_on: 
-      - dnsmasq
-    logging:
-      driver: json-file
       options:
         max-size: "10m"
         max-file: "5"
@@ -94,4 +58,4 @@ networks:
 
 volumes:
   letsencrypt:
-  letsencrypt1:
+  

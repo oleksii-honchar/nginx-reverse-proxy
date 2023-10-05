@@ -102,7 +102,7 @@ Here is the deployment diagram for the solution:
 2. Local user flow
    - (4) - User from the same residential network make request to the `your-domain.tld` from his browser. And his network already configured to use proxy. Which in fact is `Squid` proxy server running in the docker-compose configuration with NRP 
    - (5) - `Squid` configured to resolve domains using `dnsmasq`. Which is aware of `your-domain.tld` to be forwarded to NRP `multi-proxy` network IP. 
-   - (6) - When domain name IP resolved, `squid` proxied requests to NRP
+   - (6) - When domain name IP resolved, `squid` proxied requests to `nginx`
 
 **Notes**
 - This is known tradeoff - with `squid` proxy enabled on your local devices, all their DNS and HTTP traffic will go through the `squid` on host machine. On "Macbook Pro M1" it utilizes ~0.02 cores
