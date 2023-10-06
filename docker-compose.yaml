@@ -6,7 +6,6 @@ services:
       - project.env
     environment:
       - TZ=Europe/Madrid
-      - CERTBOT_WAIT=false
     image: tuiteraz/nginx-reverse-proxy:${LATEST_VERSION}
     platform: linux/aarch64 # m1/m2 mac
     restart: unless-stopped
@@ -19,7 +18,7 @@ services:
       - ./nrp.yaml:/etc/nrp.yaml
       - letsencrypt:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
-      # - ./nrp-cli-linux:/usr/local/bin/nrp-cli
+      - ./nrp-cli-linux:/usr/local/bin/nrp-cli
     networks:
       multi-proxy:
     cap_add:
@@ -31,8 +30,6 @@ services:
         max-file: "5"
 
   cadvisor:
-    env_file:
-      - project.env
     image: tuiteraz/cadvisor:0.47.2
     platform: linux/aarch64 # m1/m2 mac
     devices:

@@ -25,14 +25,14 @@ RUN mkdir -p /etc/letsencrypt
 COPY ./scripts/prefix-log-certbot.bash /usr/local/bin/prefix-log-certbot
 RUN chmod +x /usr/local/bin/prefix-log-certbot
 
-# Cron
-COPY ./configs/crontab /etc/crontabs/root
-RUN chmod 0644 /etc/crontabs/root
-
 # Nginx config
 COPY ./configs/nginx /etc/nginx
 
 # nrp-cli
+COPY ./scripts/prefix-log-nrp.bash /usr/local/bin/prefix-log-nrp
+RUN chmod +x /usr/local/bin/prefix-log-nrp
+
+RUN mkdir /etc/nrp
 ENV NRP_CLI_VER=v0.5.0
 RUN wget https://github.com/oleksii-honchar/nrp-cli/releases/download/$NRP_CLI_VER/nrp-cli-linux-$NRP_CLI_VER.tar.gz && \
     tar xzvf nrp-cli-linux-$NRP_CLI_VER.tar.gz && \

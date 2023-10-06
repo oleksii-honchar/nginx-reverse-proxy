@@ -22,6 +22,8 @@ cat < $SQUID_CACHE_LOG_FILE >/dev/stdout &
 
 # nrp-cli - generate nginx, squid & dnsmasq configs, also request SSL cert if needed
 value="${CERTBOT_WAIT:-false}"
-/usr/local/bin/nrp-cli -config=/etc/nrp.yaml -log-level=debug -certbot-wait=$value
+level="${LOG_LEVEL:-info}"
+/usr/local/bin/nrp-cli -config=/etc/nrp.yaml -log-level=$level -check-and-update-public-ip -force
+/usr/local/bin/nrp-cli -config=/etc/nrp.yaml -log-level=$level -certbot-wait=$value
 
 exec "$@"

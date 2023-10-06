@@ -8,8 +8,8 @@ BOLD_ON=\033[1m
 BOLD_OFF=\033[21m
 CLEAR=\033[2J
 
-# include project.env
-# export $(shell sed 's/=.*//' project.env)
+include project.env
+export $(shell sed 's/=.*//' project.env)
 
 include ./.devops/envs/deployment.env
 export $(shell sed 's/=.*//' ./.devops/envs/deployment.env)
@@ -40,33 +40,33 @@ logs:  ## docker logs
 log:  ## docker log for svc=<docker service name>
 	@docker compose logs --follow ${svc}
 
-up:  ## docker up, or svc=<svc-name>
+up: check-project-env-vars ## docker up, or svc=<svc-name>
 	@docker compose up --build --remove-orphans -d ${svc}
 
-down:  ## docker down, or svc=<svc-name>
+down: check-project-env-vars ## docker down, or svc=<svc-name>
 	@docker compose down ${svc}
 
 .ONESHELL:
-restart:  ## restart all
+restart: check-project-env-vars  ## restart all
 	@docker compose down
 	@docker compose up --build --remove-orphans -d
 	@docker compose logs --follow
 
-exec-bash:  ## get shell for svc=<svc-name> container
+exec-bash: check-project-env-vars ## get shell for svc=<svc-name> container
 	@docker exec -it ${svc} bash
 
-exec-sh:  ## get shell for svc=<svc-name> container
+exec-sh: check-project-env-vars ## get shell for svc=<svc-name> container
 	@docker exec -it ${svc} sh
 
-run-nrp-bash:  ## run NRP bash
+run-nrp-bash: check-project-env-vars ## run NRP bash
 	docker run -it $(IMAGE_NAME):$(LATEST_VERSION) bash
 
-test-nginx-config:  ## text nginx config
+test-nginx-config: check-project-env-vars ## text nginx config
 	@docker run -it $(IMAGE_NAME):$(LATEST_VERSION) nginx -t
 
 # To get <volume-name> use `docker volume ls`
 # make run-volume name=nginx-reverse-proxy_letsencrypt
-run-volume: ## run container to check volume content for name=<volume-name>
+run-volume: check-project-env-vars ## run container to check volume content for name=<volume-name>
 	docker run -it --rm -v $(name):/volume-data --name volume-check busybox
 
 # NRP image
