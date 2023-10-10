@@ -5,7 +5,7 @@
 * [How to start](#how-to-start)
   * [Prerequisites](#prerequisites)
   * [Bootstrap](#bootstrap)
-* [Additonal configuration features](#additonal-configuration-features)
+* [Additional configuration features](#additonal-configuration-features)
 * [Solution description](#solution-description)
   * [Other options](#other-options)
 * [Troubleshooting](#troubleshooting)
@@ -97,7 +97,7 @@
    * Do the same for Wi-Fi clients, which need to access `your-domain.tld` from local network
    * Now all local and Wi-Fi DNS and HTTP/S requests will be proxied through the `squid`
 
-## Additonal configuration features
+## Additional configuration features
 
 * In case when no static public IP available, then `public-ip` check can be enabled by config option (check details in [nrp-cli doc](https://github.com/oleksii-honchar/nrp-cli#configuration-schema)):
 
