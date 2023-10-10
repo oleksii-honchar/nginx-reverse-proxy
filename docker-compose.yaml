@@ -1,25 +1,57 @@
-version: '3.8'
+version: '3'
 
 services:
-  nginx-reverse-proxy:
+  nrp:
+    env_file:
+      - project.env
     environment:
       - TZ=Europe/Madrid
     image: tuiteraz/nginx-reverse-proxy:${LATEST_VERSION}
     restart: unless-stopped
-    container_name: nginx-reverse-proxy
+    container_name: nrp
     ports:
       - 80:80
       - 443:443
+      - 3128:3128
     volumes:
       - ./nrp.yaml:/etc/nrp.yaml
       - letsencrypt:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
-      # - ./nginx-config:/etc/nginx
+      # - ./nrp-cli-linux:/usr/local/bin/nrp-cli
+    networks:
+      multi-proxy:
+    cap_add:
+      - NET_ADMIN
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
         max-file: "5"
 
+  cadvisor:
+    image: tuiteraz/cadvisor:0.47.2
+    platform: linux/aarch64 # m1/m2 mac
+    devices:
+      - /dev/kmsg:/dev/kmsg
+    container_name: cadvisor
+    privileged: true
+    ports:
+      - 4082:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro # for docker socket
+      - /var/folders:/var/lib/docker:ro # directory, which contains Docker's data
+      - /dev/disk0:/dev/disk # This directory, where disk I/O stats are available: diskutil list
+      - /etc/machine-id:/etc/machine-id:ro
+      - /var/lib/dbus/machine-id:/var/lib/dbus/machine-id:ro
+    networks:
+      multi-proxy:
+    restart: unless-stopped
+
+networks:
+  multi-proxy:
+    driver: bridge
+
 volumes:
   letsencrypt:
+  
