@@ -5,7 +5,7 @@
 * [How to start](#how-to-start)
   * [Prerequisites](#prerequisites)
   * [Bootstrap](#bootstrap)
-* [Additonal features](#additonal-features)
+* [Additonal configuration features](#additonal-configuration-features)
 * [Solution description](#solution-description)
   * [Other options](#other-options)
 * [Troubleshooting](#troubleshooting)
