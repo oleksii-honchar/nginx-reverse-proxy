@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 1000 1000" width="1000px" height="1000px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="0" y="0" width="20" height="20"/>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="490.001" cy="825.097" r="440.003" id="gradient-0" spreadMethod="pad" gradientTransform="matrix(1.023918, -0.003763, 0, 1.806919, -11.719804, -664.426096)">
+      <stop offset="0" style="stop-color: rgb(9, 115, 50);"/>
+      <stop offset="1" style="stop-color: rgb(13, 178, 73);"/>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="490.001" cy="825.097" r="440.003" id="gradient-2" spreadMethod="pad" gradientTransform="matrix(0, -1.18124, 1.212205, -0.000181, -500.187972, 1291.757697)">
+      <stop offset="0" style="stop-color: rgb(102, 254, 203);"/>
+      <stop offset="0.078" style="stop-color: rgb(102, 254, 203);"/>
+      <stop offset="1" style="stop-color: rgb(42, 21, 68);"/>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="490.001" cy="825.097" r="440.003" id="gradient-1" spreadMethod="pad" gradientTransform="matrix(0, -1.18124, 1.212205, -0.000181, -500.187972, 1291.757697)">
+      <stop offset="0" style="stop-color: rgb(102, 254, 203);"/>
+      <stop offset="0.078" style="stop-color: rgb(102, 254, 203);"/>
+      <stop offset="1" style="stop-color: rgb(42, 21, 68);"/>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="393.886" cy="823.69" r="440.003" id="gradient-3" spreadMethod="pad" gradientTransform="matrix(0, -0.567751, 1.345679, 0, -610.129396, 1049.963996)">
+      <stop offset="0" style="stop-color: rgb(4, 42, 29);"/>
+      <stop offset="1" style="stop-color: rgb(31, 255, 180);"/>
+    </radialGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" id="gradient-4">
+      <stop offset="0" style="stop-color: #bada55"/>
+      <stop offset="1" style="stop-color: #758d29"/>
+    </linearGradient>
+    <linearGradient id="gradient-5" bx:pinned="true">
+      <stop style="stop-color: rgb(186, 218, 85);" offset="0"/>
+      <stop style="stop-color: rgb(117, 141, 41);" offset="1"/>
+    </linearGradient>
+    <linearGradient id="gradient-5-0" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+    <linearGradient id="gradient-5-1" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+    <linearGradient id="gradient-5-2" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+    <linearGradient id="gradient-5-3" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+    <linearGradient id="gradient-5-4" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+  </defs>
+  <g style="pointer-events: none;">
+    <title>base hex</title>
+    <path d="M 490.001 24.618 L 930.004 264.617 L 930.004 744.613 L 490.001 984.612 L 49.998 744.614 L 49.998 264.617 Z" style="stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; fill: url('#gradient-0'); paint-order: fill; transform-box: fill-box; transform-origin: 50.0162% 91.6518%;" transform="matrix(0.999993, 0.003675, 0, 1.000007, 9.998919, -6.229275)" bx:shape="n-gon 490.001 504.615 508.072 479.997 6 0 1@b2ff32b5">
+      <title>base hex</title>
+    </path>
+    <path d="M 490.001 128.828 L 834.476 316.722 L 834.476 692.508 L 490.001 880.402 L 145.526 692.509 L 145.526 316.722 Z" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; paint-order: fill; transform-origin: 490.144px 904.47px;" transform="matrix(0.999993, 0.003675, 0, 1.000007, 9.998992, -4.611989)" bx:shape="n-gon 490.001 504.615 397.766 375.787 6 0 1@d44c62df">
+      <title>base internal hex black</title>
+    </path>
+    <path d="M 500 122.944 L 800 288.724 L 800 657.126 L 500 826.335 L 200 654.921 L 200 286.698 L 500 122.944 Z" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; paint-order: fill; fill: url('#gradient-2'); transform-origin: 490.144px 904.47px; visibility: hidden;">
+      <title>base internal hex</title>
+    </path>
+  </g>
+  <g style="pointer-events: none;">
+    <title>bg</title>
+    <path d="M 500 122.944 L 800 288.724 L 800 657.126 L 500 826.335 L 200 654.921 L 200 286.698 L 500 122.944 Z" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; paint-order: fill; fill: url('#gradient-3'); transform-origin: 490.144px 904.47px;">
+      <title>earth</title>
+    </path>
+    <path d="M 500 122.944 L 800 288.724 L 800 653.808 C 575.884 583.142 423.049 576.289 200 651.722 L 200 286.698 Z" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; paint-order: fill; fill: url('#gradient-1');">
+      <title>sky</title>
+    </path>
+  </g>
+  <g style="visibility: hidden;">
+    <title>bottom cyan hex 3pcs 1</title>
+    <g transform="matrix(0.10392, 0, 0, 0.100771, 363.885717, 677.341868)" id="g-2" style="">
+      <title>cyan hex</title>
+      <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-4');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+        <title>cyan hex</title>
+      </path>
+    </g>
+    <g transform="matrix(0.10392, 0, 0, 0.100771, 640.114328, 677.341868)" id="g-3" style="">
+      <title>cyan hex</title>
+      <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-0');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+        <title>cyan hex</title>
+      </path>
+    </g>
+    <g transform="matrix(0.10392, 0, 0, 0.100771, 502.000038, 676.341868)" id="g-1" style="">
+      <title>cyan hex</title>
+      <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-1');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+        <title>cyan hex</title>
+      </path>
+    </g>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 2.778196, -1)" style="">
+    <title>bottom cyan hex 3pcs 2</title>
+    <g transform="matrix(0.194702, 0, 0, 0.188802, 499.22184, 706.392345)" id="g-4">
+      <title>cyan hex</title>
+      <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-2');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+        <title>cyan hex</title>
+      </path>
+    </g>
+    <g transform="matrix(0.10392, 0, 0, 0.100771, 361.107519, 677.342112)" id="g-5" style="">
+      <title>cyan hex</title>
+      <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-3');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+        <title>cyan hex</title>
+      </path>
+    </g>
+    <g transform="matrix(0.10392, 0, 0, 0.100771, 637.33613, 677.342112)" id="g-6" style="">
+      <title>cyan hex</title>
+      <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-4');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+        <title>cyan hex</title>
+      </path>
+    </g>
+  </g>
+  <g transform="matrix(1.755753, 0, 0, 1.755753, 500.000007, 401.53977)" id="PxENUObn4ud0fm-HhvdpG" style="">
+    <title>N</title>
+    <path style="stroke: rgb(3,110,72); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(223,255,248); fill-rule: nonzero; opacity: 1;" transform=" translate(0, 0)" d="M -80 -80 L -60 -80 L 60 50.98456999999999 L 60 -80 L 80 -80 L 80 80 L 60 80 L -60 -48.64089999999999 L -60 80 L -80 80 z" stroke-linecap="round"/>
+  </g>
+</svg>

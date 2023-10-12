@@ -28,3 +28,4 @@ nrp-cli-linux
 
 dnsmasq.conf
 squid.conf
+configs/nginx/cors-servers.conf

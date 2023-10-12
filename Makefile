@@ -29,10 +29,10 @@ check-project-env-vars: # check env vars mentioned in project.env.dist to be fil
 
 # Docker
 cleanup:
-	@bash ./scripts/docker-cleanup.bash
+	@bash .devops/local/scripts/docker-cleanup.bash
 
 soft-cleanup:
-	@bash ./scripts/docker-soft-cleanup.bash
+	@bash .devops/local/scripts/docker-soft-cleanup.bash
 
 logs:  ## docker logs
 	@docker compose logs --follow

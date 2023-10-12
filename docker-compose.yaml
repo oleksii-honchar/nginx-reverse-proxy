@@ -18,6 +18,7 @@ services:
       - letsencrypt:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
       # - ./nrp-cli-linux:/usr/local/bin/nrp-cli
+      # - ./configs/nginx:/etc/nginx
     networks:
       multi-proxy:
     cap_add:
