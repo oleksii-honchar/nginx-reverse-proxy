@@ -40,6 +40,10 @@ logs:  ## docker logs
 log:  ## docker log for svc=<docker service name>
 	@docker compose logs --follow ${svc}
 
+# make log-proc --follow nrp | grep nginx
+log-proc:  ## docker log --follow <svc> |grep <proc>
+	@docker compose logs --follow ${svc} | grep ${proc}
+
 up: check-project-env-vars ## docker up, or svc=<svc-name>
 	@docker compose up --build --remove-orphans -d ${svc}
 
@@ -77,6 +81,6 @@ build:
 tag-latest: 
 	@docker tag $(IMAGE_NAME):$(LATEST_VERSION) $(IMAGE_NAME):latest
 
-push: 
+push: ## push latest image to docker hub
 	@docker push docker.io/$(IMAGE_NAME):$(LATEST_VERSION)
 	@docker push docker.io/$(IMAGE_NAME):latest

@@ -18,7 +18,7 @@ logs/*
 node_modules/
 devops/version/
 tmp
-nrp.yaml
+# nrp.yaml - env vars used to hide values
 conf.d
 conf.available
 letsencrypt

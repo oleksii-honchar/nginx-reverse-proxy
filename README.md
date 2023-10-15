@@ -1,7 +1,7 @@
 # nginx-reverse-proxy
 
 * [Goal](#goal)
-* [Context](#context)
+* [Context / Motivation](#context)
 * [How to start](#how-to-start)
   * [Prerequisites](#prerequisites)
   * [Bootstrap](#bootstrap)
@@ -10,17 +10,20 @@
   * [Other options](#other-options)
 * [Troubleshooting](#troubleshooting)
 
+[Nginx-Reverse-Proxy](https://github.com/oleksii-honchar/nginx-reverse-proxy) project is modern and static configuration based alternative to [Nginx-Proxy-Manager](https://nginxproxymanager.com/).
+
 ## Goal
 
 * To have Nginx reverse-proxy for multiple aplication hosted locally
-* Accessible from the WWW by domain name using HTTPS
-* No ISP NAT-loopback, and no public static IP tolerant
+* Accessible from the WWW by domain name using HTTPS with autorefresh
+* Able to work with dynamic public IP
+* Able to work without ISP NAT-loopback, i.e no access to forwarded domain from local network
 * Dockerized and configured by single config file - `nrp.yaml`
 
-## Context
+## Context / Motivation
 
 * Platform - `Mac M1` & `Linux`. It should work on Windows, but was not tested
-* No Static Public IP (I don't have it and don't want to pay €14/mo just for it)
+* No Static Public IP (I don't have it and don't want to pay €14/mo just for it to Vodafone)
 * ISP `NAT loopback` not available, i.e local device can't access services using its public IP address from within the same network. It means that one can't access `your-domain.tld` proxied service from the same network
   * If one have public static IP and NAT-loopback the live will be just easier :-)
 
@@ -61,7 +64,6 @@
     * Create `nrp.yaml` file in root repo folder, e.g.:
 
       ```yaml
-      schemaVersion: 0.3.0
       letsencrypt:
         email: "you-name@gmail.com"
         dryRun: false
@@ -82,11 +84,13 @@
           hsts: true
       ```
 
-      **Notes:** use your real email for SSL certificates
+      **Notes:** 
+      * use your real email for SSL certificates
+      * additionaly you can hide sensitive info using env vars (read more in [nrp-cli "Adding new service" doc section](https://github.com/oleksii-honchar/nrp-cli#adding-new-service))
 
 5. Start NRP by `make restart`
 
-    * [`nrp-cli`](https://github.com/oleksii-honchar/nrp-cli) internally will created necessary `nginx` config files and start `certbot` if https needed
+    * [`nrp-cli`](https://github.com/oleksii-honchar/nrp-cli) internally will created necessary `nginx` config files and start `certbot` if https needed (read more about config schema options in [nrp-cli docs](https://github.com/oleksii-honchar/nrp-cli#configuration-schema))
     * `dnsmasq` and `squid` config wil be generated according to `nrp.yaml`
     * `certbot` will run every 1d to renew certificates via `cron`
 
@@ -95,7 +99,7 @@
    * If you added domains in `/etc/hosts` you do not need to use `squid` proxy on that particular host. Otherwise, go to host System Settings → Network → Wi-Fi (or your selected active connection) → Advanced → Proxies. 
       * Add `<local-host-ip>` with `port=<SQUID_PORT>` as proxy(e.g. `proxy=192.168.0.111, port=3128`).
    * Do the same for Wi-Fi clients, which need to access `your-domain.tld` from local network
-   * Now all local and Wi-Fi DNS and HTTP/S requests will be proxied through the `squid`
+   * Now all local and Wi-Fi DNS and HTTP/S requests will be proxied through the `squid`. Which will resolve your proxied domains via `dnsmasq` to local NRP host. Magic!
 
 ## Additional configuration features
 
@@ -125,9 +129,9 @@
 
 ## Solution description
 
-With NAT loopback disabled by the ISP, local network devices cannot access the proxied service using the `your-domain.tld` name. There are various options available for solving this problem, which are described below for educational purposes. The current solution utilizes a non-root `docker-compose` approach with `squid` and `dnsmasq`. Custom `arm64` `squid` image used to disable file logs and pipe them to docker native logs to manage log rotation on docker-compose level. Also, custom image of `cadvisor` used since there is no official `arm64` version(by 3/10/23).
+With NAT loopback disabled by the ISP, local network devices cannot access the proxied service using the `your-domain.tld` name. There are various options available for solving this problem, which are described below for educational purposes. The current solution utilizes a non-root `docker-compose` approach with `squid` and `dnsmasq`. Also, custom image of `cadvisor` used since there is no official `arm64` version(by 3/10/23).
 
-Configuration for `squid` and `dnsmasq` updated by `generate-config.bash` script on every docker  `make <command>`. One just need to have `project.env` properly filled.
+Also recommended to read [nrp-cli](https://github.com/oleksii-honchar/nrp-cli#nrp-cli) docs for more details on config preparation.
 
 Here is the deployment diagram for the solution:
 ![Deployment diagram](docs/deployment-diagram.jpg)
@@ -280,3 +284,5 @@ http_access allow all
 ## Troubleshooting
 
 * if certbot failed to make request, try dryRun option for testing and check docker network to be `bridge` without additonal subnets and static ip defined
+
+* if something goes wrong and you miss details - set LOG_LEVEL=debug in `project.env` and read the logs.

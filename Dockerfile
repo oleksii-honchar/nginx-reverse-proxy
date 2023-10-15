@@ -33,7 +33,7 @@ COPY ./scripts/prefix-log-nrp.bash /usr/local/bin/prefix-log-nrp
 RUN chmod +x /usr/local/bin/prefix-log-nrp
 
 RUN mkdir /etc/nrp
-ENV NRP_CLI_VER=v0.7.0
+ENV NRP_CLI_VER=v0.8.0
 RUN wget https://github.com/oleksii-honchar/nrp-cli/releases/download/$NRP_CLI_VER/nrp-cli-linux-$NRP_CLI_VER.tar.gz && \
     tar xzvf nrp-cli-linux-$NRP_CLI_VER.tar.gz && \
     cp ./nrp-cli-linux /usr/local/bin/nrp-cli &&\
