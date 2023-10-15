@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 1000 200" width="1000px" height="200px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="0" y="0" width="20" height="20"/>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="490.001" cy="825.097" r="440.003" id="gradient-0" spreadMethod="pad" gradientTransform="matrix(1.023918, -0.003763, 0, 1.806919, -11.719804, -664.426096)">
+      <stop offset="0" style="stop-color: rgb(9, 115, 50);"/>
+      <stop offset="1" style="stop-color: rgb(13, 178, 73);"/>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="490.001" cy="825.097" r="440.003" id="gradient-2" spreadMethod="pad" gradientTransform="matrix(0, -1.18124, 1.212205, -0.000181, -500.187972, 1291.757697)">
+      <stop offset="0" style="stop-color: rgb(102, 254, 203);"/>
+      <stop offset="0.078" style="stop-color: rgb(102, 254, 203);"/>
+      <stop offset="1" style="stop-color: rgb(42, 21, 68);"/>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="490.001" cy="825.097" r="440.003" id="gradient-1" spreadMethod="pad" gradientTransform="matrix(0, -1.18124, 1.212205, -0.000181, -500.187972, 1291.757697)">
+      <stop offset="0" style="stop-color: rgb(102, 254, 203);"/>
+      <stop offset="0.078" style="stop-color: rgb(102, 254, 203);"/>
+      <stop offset="1" style="stop-color: rgb(42, 21, 68);"/>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="393.886" cy="823.69" r="440.003" id="gradient-3" spreadMethod="pad" gradientTransform="matrix(0, -0.567751, 1.345679, 0, -610.129396, 1049.963996)">
+      <stop offset="0" style="stop-color: rgb(4, 42, 29);"/>
+      <stop offset="1" style="stop-color: rgb(31, 255, 180);"/>
+    </radialGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" id="gradient-4">
+      <stop offset="0" style="stop-color: #bada55"/>
+      <stop offset="1" style="stop-color: #758d29"/>
+    </linearGradient>
+    <linearGradient id="gradient-5" bx:pinned="true">
+      <stop style="stop-color: rgb(186, 218, 85);" offset="0"/>
+      <stop style="stop-color: rgb(117, 141, 41);" offset="1"/>
+    </linearGradient>
+    <linearGradient id="gradient-5-0" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+    <linearGradient id="gradient-5-1" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+    <linearGradient id="gradient-5-2" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+    <linearGradient id="gradient-5-3" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+    <linearGradient id="gradient-5-4" gradientUnits="userSpaceOnUse" x1="0" y1="-330" x2="0" y2="330" xlink:href="#gradient-5"/>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="500" y1="141.604" x2="500" y2="178.295" id="gradient-6" gradientTransform="matrix(-0.061576, 0.998103, -9.652777, -0.595503, 2073.954138, -242.482149)">
+      <stop offset="0" style="stop-color: rgb(13, 178, 73);"/>
+      <stop offset="1" style="stop-color: rgb(31, 255, 180);"/>
+    </linearGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="314.47" cy="376.173" r="500" id="gradient-7" gradientTransform="matrix(0, -1.047392, 1.175077, 0, 55.408557, 851.432679)">
+      <stop offset="0" style="stop-color: rgb(31, 255, 180);"/>
+      <stop offset="1" style="stop-color: rgb(42, 21, 68);"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="200" style="stroke: rgb(0, 0, 0); fill: url('#gradient-7'); pointer-events: none;"/>
+  <g style="pointer-events: none;" transform="matrix(0.108601, 0, 0, 0.108601, 445.631507, 21.375779)">
+    <title>logo</title>
+    <g style="">
+      <title>base hex</title>
+      <path d="M 490.001 24.618 L 930.004 264.617 L 930.004 744.613 L 490.001 984.612 L 49.998 744.614 L 49.998 264.617 Z" style="stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; fill: url('#gradient-0'); paint-order: fill; transform-box: fill-box; transform-origin: 50.0162% 91.6518%;" transform="matrix(0.999993, 0.003675, 0, 1.000007, 9.998919, -6.229275)" bx:shape="n-gon 490.001 504.615 508.072 479.997 6 0 1@b2ff32b5">
+        <title>base hex</title>
+      </path>
+      <path d="M 490.001 128.828 L 834.476 316.722 L 834.476 692.508 L 490.001 880.402 L 145.526 692.509 L 145.526 316.722 Z" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; paint-order: fill; transform-origin: 490.144px 904.47px;" transform="matrix(0.999993, 0.003675, 0, 1.000007, 9.998992, -4.611989)" bx:shape="n-gon 490.001 504.615 397.766 375.787 6 0 1@d44c62df">
+        <title>base internal hex black</title>
+      </path>
+      <path d="M 500 122.944 L 800 288.724 L 800 657.126 L 500 826.335 L 200 654.921 L 200 286.698 L 500 122.944 Z" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; paint-order: fill; fill: url('#gradient-2'); transform-origin: 490.144px 904.47px; visibility: hidden;">
+        <title>base internal hex</title>
+      </path>
+    </g>
+    <g style="">
+      <title>bg</title>
+      <path d="M 500 122.944 L 800 288.724 L 800 657.126 L 500 826.335 L 200 654.921 L 200 286.698 L 500 122.944 Z" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; paint-order: fill; fill: url('#gradient-3'); transform-origin: 490.144px 904.47px;">
+        <title>earth</title>
+      </path>
+      <path d="M 500 122.944 L 800 288.724 L 800 653.808 C 575.884 583.142 423.049 576.289 200 651.722 L 200 286.698 Z" style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 20px; paint-order: fill; fill: url('#gradient-1');">
+        <title>sky</title>
+      </path>
+    </g>
+    <g style="visibility: hidden;">
+      <title>bottom cyan hex 3pcs 1</title>
+      <g transform="matrix(0.10392, 0, 0, 0.100771, 363.885717, 677.341868)" id="g-2" style="">
+        <title>cyan hex</title>
+        <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-4');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+          <title>cyan hex</title>
+        </path>
+      </g>
+      <g transform="matrix(0.10392, 0, 0, 0.100771, 640.114328, 677.341868)" id="g-3" style="">
+        <title>cyan hex</title>
+        <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-0');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+          <title>cyan hex</title>
+        </path>
+      </g>
+      <g transform="matrix(0.10392, 0, 0, 0.100771, 502.000038, 676.341868)" id="g-1" style="">
+        <title>cyan hex</title>
+        <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-1');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+          <title>cyan hex</title>
+        </path>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 2.778196, -1)" style="">
+      <title>bottom cyan hex 3pcs 2</title>
+      <g transform="matrix(0.194702, 0, 0, 0.188802, 499.22184, 706.392345)" id="g-4">
+        <title>cyan hex</title>
+        <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-2');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+          <title>cyan hex</title>
+        </path>
+      </g>
+      <g transform="matrix(0.10392, 0, 0, 0.100771, 361.107519, 677.342112)" id="g-5" style="">
+        <title>cyan hex</title>
+        <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-3');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+          <title>cyan hex</title>
+        </path>
+      </g>
+      <g transform="matrix(0.10392, 0, 0, 0.100771, 637.33613, 677.342112)" id="g-6" style="">
+        <title>cyan hex</title>
+        <path style="stroke-width: 70; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill-rule: nonzero; opacity: 1; stroke: rgb(42, 21, 69); fill: url('#gradient-5-4');" d="M -280 -165 L 0 -330 L 280 -165 L 280 165 L 0 330 L -280 165 z" stroke-linecap="round" transform=" translate(0, 0)">
+          <title>cyan hex</title>
+        </path>
+      </g>
+    </g>
+    <g transform="matrix(1.755753, 0, 0, 1.755753, 500.000007, 401.53977)" id="PxENUObn4ud0fm-HhvdpG" style="">
+      <title>N</title>
+      <path style="stroke: rgb(3,110,72); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(223,255,248); fill-rule: nonzero; opacity: 1;" transform=" translate(0, 0)" d="M -80 -80 L -60 -80 L 60 50.98456999999999 L 60 -80 L 80 -80 L 80 80 L 60 80 L -60 -48.64089999999999 L -60 80 L -80 80 z" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text style="fill: url('#gradient-6'); font-family: Verdana; font-size: 30.2px; font-weight: 700; white-space: pre; pointer-events: none;" x="319.107" y="171.82">Nginx-Reverse-Proxy</text>
+  <g style="">
+    <title>circles</title>
+    <g transform="matrix(1, 0, 0, 1, -452.554969, -155.399035)">
+      <defs>
+        <path id="SVGID_1_" d="M1387.2,175.4c4.9,18.5,23.9,29.6,42.4,24.7c18.5-4.9,29.6-23.9,24.7-42.4c-4.9-18.5-23.9-29.6-42.4-24.7 C1393.4,137.9,1382.3,156.9,1387.2,175.4 M1259.7,209.1c-23.5-88.9,29.6-180.1,118.5-203.6c88.9-23.5,180.1,29.6,203.6,118.5 c23.5,88.9-29.6,180.1-118.5,203.6C1374.3,351.1,1283.2,298,1259.7,209.1"/>
+      </defs>
+      <clipPath id="SVGID_2_">
+        <path d="M 1108.87 140.207 C 1112.787 154.995 1127.974 163.868 1142.763 159.951 C 1157.55 156.034 1166.423 140.846 1162.506 126.059 C 1158.589 111.271 1143.402 102.398 1128.614 106.315 C 1113.826 110.232 1104.953 125.42 1108.87 140.207 M 1006.951 167.146 C 988.166 96.083 1030.613 23.181 1101.675 4.396 C 1172.738 -14.389 1245.64 28.058 1264.425 99.12 C 1283.21 170.183 1240.763 243.085 1169.701 261.87 C 1098.558 280.655 1025.736 238.208 1006.951 167.146" overflow="visible"/>
+      </clipPath>
+      <rect x="998.558" y="-3.997" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 519.034554, 845.033887)" opacity="0.2" clip-path="url(#SVGID_2_)" fill="#FFFFFF" width="274.26" height="274.26" style=""/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -782.555004, -235.399036)">
+      <defs>
+        <path id="SVGID_3_" d="M1516.9,463.5c11.7,44.4,57.4,71,101.8,59.2c44.4-11.7,71-57.4,59.2-101.8c-11.7-44.4-57.4-71-101.8-59.2 C1531.8,373.4,1505.2,419.1,1516.9,463.5 M1500.8,467.7c-14.1-53.4,17.7-108,71.1-122.1c53.4-14.1,108,17.7,122.1,71.1 c14.1,53.4-17.7,108-71.1,122.1C1569.6,552.9,1514.9,521.1,1500.8,467.7"/>
+      </defs>
+      <clipPath id="SVGID_4_">
+        <path d="M1516.9,463.5c11.7,44.4,57.4,71,101.8,59.2c44.4-11.7,71-57.4,59.2-101.8c-11.7-44.4-57.4-71-101.8-59.2 C1531.8,373.4,1505.2,419.1,1516.9,463.5 M1500.8,467.7c-14.1-53.4,17.7-108,71.1-122.1c53.4-14.1,108,17.7,122.1,71.1 c14.1,53.4-17.7,108-71.1,122.1C1569.6,552.9,1514.9,521.1,1500.8,467.7" overflow="visible"/>
+      </clipPath>
+      <rect x="1492.5" y="337.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 155.1939 1259.0591)" opacity="0.2" clip-path="url(#SVGID_4_)" fill="#FFFFFF" width="209.9" height="209.9"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -582.555001, -225.399036)">
+      <defs>
+        <path id="SVGID_5_" d="M1549.3,456.3c7.3,27.8,35.9,44.4,63.7,37.1c27.8-7.3,44.4-35.9,37.1-63.7c-7.3-27.8-35.9-44.4-63.7-37.1 C1558.6,399.9,1542,428.5,1549.3,456.3 M1533.2,460.6c-9.7-36.8,12.2-74.4,49-84.1c36.8-9.7,74.4,12.2,84.1,49 c9.7,36.8-12.2,74.4-49,84.1C1580.6,519.2,1542.9,497.3,1533.2,460.6"/>
+      </defs>
+      <clipPath id="SVGID_6_">
+        <path d="M1549.3,456.3c7.3,27.8,35.9,44.4,63.7,37.1c27.8-7.3,44.4-35.9,37.1-63.7c-7.3-27.8-35.9-44.4-63.7-37.1 C1558.6,399.9,1542,428.5,1549.3,456.3 M1533.2,460.6c-9.7-36.8,12.2-74.4,49-84.1c36.8-9.7,74.4,12.2,84.1,49 c9.7,36.8-12.2,74.4-49,84.1C1580.6,519.2,1542.9,497.3,1533.2,460.6" overflow="visible"/>
+      </clipPath>
+      <rect x="1525.9" y="369.1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 155.3305 1260.9583)" opacity="0.2" clip-path="url(#SVGID_6_)" fill="#FFFFFF" width="147.7" height="147.7"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -62.554963, -325.399053)">
+      <defs>
+        <path id="SVGID_7_" d="M89.1,530.4c0-12.7,10.3-23.1,23-23.2c12.7,0,23.1,10.3,23.2,23c0,12.7-10.3,23.1-23,23.2 C99.5,553.4,89.1,543.1,89.1,530.4 M1.3,530.7c0.2,61.2,50,110.7,111.3,110.5c61.2-0.2,110.7-50,110.5-111.3 c-0.2-61.2-50-110.7-111.3-110.5C50.6,419.6,1.1,469.4,1.3,530.7"/>
+      </defs>
+      <clipPath id="SVGID_8_">
+        <path d="M89.1,530.4c0-12.7,10.3-23.1,23-23.2c12.7,0,23.1,10.3,23.2,23c0,12.7-10.3,23.1-23,23.2 C99.5,553.4,89.1,543.1,89.1,530.4 M1.3,530.7c0.2,61.2,50,110.7,111.3,110.5c61.2-0.2,110.7-50,110.5-111.3 c-0.2-61.2-50-110.7-111.3-110.5C50.6,419.6,1.1,469.4,1.3,530.7" overflow="visible"/>
+      </clipPath>
+      <rect x="-3.7" y="414.4" transform="matrix(0.5 -0.866 0.866 0.5 -403.1351 362.2907)" opacity="0.2" clip-path="url(#SVGID_8_)" fill="#FFFFFF" width="231.8" height="231.8"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -172.554965, -275.399052)">
+      <defs>
+        <path id="SVGID_9_" d="M123.3,322.6c-0.1-30.6,24.7-55.5,55.2-55.6c30.6-0.1,55.5,24.7,55.6,55.2c0.1,30.6-24.7,55.5-55.2,55.6 C148.4,378,123.5,353.2,123.3,322.6 M112.3,322.7c0.1,36.7,30,66.4,66.8,66.3c36.7-0.1,66.4-30,66.3-66.8 c-0.1-36.7-30-66.4-66.8-66.3C141.8,256,112.1,285.9,112.3,322.7"/>
+      </defs>
+      <clipPath id="SVGID_10_">
+        <path d="M123.3,322.6c-0.1-30.6,24.7-55.5,55.2-55.6c30.6-0.1,55.5,24.7,55.6,55.2c0.1,30.6-24.7,55.5-55.2,55.6 C148.4,378,123.5,353.2,123.3,322.6 M112.3,322.7c0.1,36.7,30,66.4,66.8,66.3c36.7-0.1,66.4-30,66.3-66.8 c-0.1-36.7-30-66.4-66.8-66.3C141.8,256,112.1,285.9,112.3,322.7" overflow="visible"/>
+      </clipPath>
+      <rect x="107.2" y="250.9" transform="matrix(0.5 -0.866 0.866 0.5 -189.8356 316.0442)" opacity="0.2" clip-path="url(#SVGID_10_)" fill="#FFFFFF" width="143.1" height="143.1"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -2.554962, -225.399036)">
+      <defs>
+        <path id="SVGID_11_" d="M145.4,322.2c-0.1-19.1,15.4-34.7,34.5-34.8c19.1-0.1,34.7,15.4,34.8,34.6c0.1,19.1-15.4,34.7-34.5,34.8 C161.1,356.8,145.5,341.3,145.4,322.2 M134.3,322.2c0.1,25.3,20.7,45.7,45.9,45.6c25.3-0.1,45.7-20.7,45.6-45.9 c-0.1-25.3-20.7-45.7-45.9-45.6C154.6,276.4,134.2,297,134.3,322.2"/>
+      </defs>
+      <clipPath id="SVGID_12_">
+        <path d="M145.4,322.2c-0.1-19.1,15.4-34.7,34.5-34.8c19.1-0.1,34.7,15.4,34.8,34.6c0.1,19.1-15.4,34.7-34.5,34.8 C161.1,356.8,145.5,341.3,145.4,322.2 M134.3,322.2c0.1,25.3,20.7,45.7,45.9,45.6c25.3-0.1,45.7-20.7,45.6-45.9 c-0.1-25.3-20.7-45.7-45.9-45.6C154.6,276.4,134.2,297,134.3,322.2" overflow="visible"/>
+      </clipPath>
+      <rect x="129.3" y="271.3" transform="matrix(0.5 -0.866 0.866 0.5 -188.8918 316.9881)" opacity="0.2" clip-path="url(#SVGID_12_)" fill="#FFFFFF" width="101.5" height="101.5"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 107.445039, -175.399035)">
+      <defs>
+        <path id="SVGID_13_" d="M43.7,130.9c24.2-0.1,43.9,19.5,44,43.7c0.1,24.2-19.5,44-43.7,44c-24.2,0.1-43.9-19.5-44-43.7 C-0.1,150.7,19.5,131,43.7,130.9"/>
+      </defs>
+      <clipPath id="SVGID_14_">
+        <path d="M43.7,130.9c24.2-0.1,43.9,19.5,44,43.7c0.1,24.2-19.5,44-43.7,44c-24.2,0.1-43.9-19.5-44-43.7 C-0.1,150.7,19.5,131,43.7,130.9" overflow="visible"/>
+      </clipPath>
+      <rect x="-5" y="125.9" transform="matrix(0.5 -0.866 0.866 0.5 -129.4321 125.396)" opacity="0.2" clip-path="url(#SVGID_14_)" fill="#FFFFFF" width="97.8" height="97.8"/>
+    </g>
+  </g>
+</svg>

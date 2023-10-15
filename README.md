@@ -1,4 +1,7 @@
-# nginx-reverse-proxy
+<div style="display: flex; flex-flow: column; align-items: center;">
+  <img src="docs/nrp-banner_1000x200.svg" width="100%"/>
+</div>
+<br/>
 
 * [Goal](#goal)
 * [Context / Motivation](#context)
