@@ -13,13 +13,13 @@
   * [Other options](#other-options)
 * [Troubleshooting](#troubleshooting)
 
-[Nginx-Reverse-Proxy](https://github.com/oleksii-honchar/nginx-reverse-proxy) project is modern and static configuration based alternative to [Nginx-Proxy-Manager](https://nginxproxymanager.com/).
+[Nginx-Reverse-Proxy](https://github.com/oleksii-honchar/nginx-reverse-proxy) project is modern and simple alternative to [Nginx-Proxy-Manager](https://nginxproxymanager.com/). Zero knowledge of nginx or SSL required.
 
 ## Goal
 
-* To have Nginx reverse-proxy for multiple aplication hosted locally
-* Accessible from the WWW by domain name using HTTPS with autorefresh
-* Able to work with dynamic public IP
+* To have Nginx reverse-proxy for multiple aplication hosted in local network
+* Accessible from the WWW by domain name using HTTPS with autorefresh (letsencrypt & certbot)
+* Able to work with dynamic public IP (AWS Route53)
 * Able to work without ISP NAT-loopback, i.e no access to forwarded domain from local network
 * Dockerized and configured by single config file - `nrp.yaml`
 
