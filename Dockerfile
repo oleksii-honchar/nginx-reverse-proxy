@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:experimental
-FROM tuiteraz/nginx-more:1.25.2-2
+FROM tuiteraz/nginx-more:1.25.2-3
 
 RUN apk add --no-cache certbot py3-pip dnsmasq-dnssec supervisor squid bash openrc && \
     pip3 install --upgrade pyOpenSSL && \
