@@ -74,11 +74,10 @@ run-volume: check-project-env-vars ## run container to check volume content for 
 	docker run -it --rm -v $(name):/volume-data --name volume-check busybox
 
 # NRP image
+build: ## build NRP image
+	docker build --load -f ./Dockerfile --build-arg LATEST_VERSION=$(LATEST_VERSION) --build-arg IMAGE_NAME=$(IMAGE_NAME) -t $(IMAGE_NAME):$(LATEST_VERSION) --platform linux/arm64 .
 
-build:
-	docker build --load -f ./Dockerfile -t $(IMAGE_NAME):$(LATEST_VERSION) --platform linux/arm64 .
-
-tag-latest: 
+tag-latest: ## tag NRP image as latest
 	@docker tag $(IMAGE_NAME):$(LATEST_VERSION) $(IMAGE_NAME):latest
 
 push: ## push latest image to docker hub

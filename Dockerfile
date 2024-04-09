@@ -1,6 +1,12 @@
 # syntax = docker/dockerfile:experimental
 FROM tuiteraz/nginx-more:1.25.2-3
 
+# NRP image name and version to print on start
+ARG LATEST_VERSION
+ARG IMAGE_NAME
+ENV LATEST_VERSION=$LATEST_VERSION
+ENV IMAGE_NAME=$IMAGE_NAME
+
 RUN apk add --no-cache certbot py3-pip dnsmasq-dnssec supervisor squid bash openrc && \
     pip3 install --upgrade pyOpenSSL && \
     apk del py3-pip

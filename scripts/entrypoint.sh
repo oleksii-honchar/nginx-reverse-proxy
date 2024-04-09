@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "${IMAGE_NAME}:${LATEST_VERSION}"
+
 # Docker
 DOCKER_LOG_PIPE=/var/log/docker-pipe
 mkfifo $DOCKER_LOG_PIPE

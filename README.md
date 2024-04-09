@@ -130,6 +130,13 @@
       logs: yes
     ```
 
+## Local development
+
+* after changes updated, bump `latest-version.txt` file
+* `make build` - build docker image
+* `make tag-latest` - tag latest"
+* `make push` - pusht new image (including "latest")
+
 ## Solution description
 
 With NAT loopback disabled by the ISP, local network devices cannot access the proxied service using the `your-domain.tld` name. There are various options available for solving this problem, which are described below for educational purposes. The current solution utilizes a non-root `docker-compose` approach with `squid` and `dnsmasq`. Also, custom image of `cadvisor` used since there is no official `arm64` version(by 3/10/23).
