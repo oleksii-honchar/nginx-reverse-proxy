@@ -10,7 +10,7 @@ CPEF_BOLD_ON='\033[1m'
 CPEF_BOLD_OFF='\033[22m'
 CPEF_NC='\033[0m' # No Color
 
-function checkProjectEnvFile () {
+function checkEnvFile () {
   projectEnvFile="${1}"
   if [ -f "$projectEnvFile" ]; then
       blablo.log "File ${CPEF_CYAN1}'${projectEnvFile}'${CPEF_NC} found in: $PWD"
@@ -23,4 +23,4 @@ function checkProjectEnvFile () {
   fi
 }
 
-export checkProjectEnvFile
+export checkEnvFile

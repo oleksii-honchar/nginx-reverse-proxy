@@ -7,12 +7,12 @@ letsencrypt:
 dnsmasq:
   logs: no
 services:
-- name: fastify1
+- name: test1
   serviceIp: $SVC1_IP
   servicePort: $SVC1_PORT
   domainName: $SVC1_DOMAIN
   domainRegistrant: route53
-- name: fastify2
+- name: test2
   use: no
   serviceIp: $SVC1_IP
   servicePort: $SVC1_PORT
