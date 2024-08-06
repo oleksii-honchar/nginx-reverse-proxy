@@ -31,49 +31,49 @@ check-env-vars: # check env vars mentioned in project.env.dist to be filled in p
 	@bash ./.devops/local/scripts/check-env-vars.sh
 
 # Docker
-cleanup:
+docker-cleanup:
 	@bash .devops/local/scripts/docker-cleanup.bash
 
-soft-cleanup:
+docker-soft-cleanup:
 	@bash .devops/local/scripts/docker-soft-cleanup.bash
 
-logs:  ## docker logs
+docker-logs:  ## docker logs
 	@docker compose logs --follow
 
-log:  ## docker log for svc=<docker service name>
+docker-log:  ## docker log for svc=<docker service name>
 	@docker compose logs --follow ${svc}
 
 # make log-proc --follow nrp | grep nginx
-log-proc:  ## docker log --follow <svc> |grep <proc>
+docker-log-proc:  ## docker log --follow <svc> |grep <proc>
 	@docker compose logs --follow ${svc} | grep ${proc}
 
-up: check-env-vars ## docker up, or svc=<svc-name>
+docker-up: check-env-vars ## docker up, or svc=<svc-name>
 	@docker compose up --build --remove-orphans -d ${svc}
 
-down: check-env-vars ## docker down, or svc=<svc-name>
+docker-down: check-env-vars ## docker down, or svc=<svc-name>
 	@docker compose down ${svc}
 
 .ONESHELL:
-restart: check-env-vars  ## restart all
+docker-restart: check-env-vars  ## restart all
 	@docker compose down
 	@docker compose up --build --remove-orphans -d
 	@docker compose logs --follow
 
-exec-bash: check-env-vars ## get shell for svc=<svc-name> container
+docker-exec-bash: check-env-vars ## get shell for svc=<svc-name> container
 	@docker exec -it ${svc} bash
 
-exec-sh: check-env-vars ## get shell for svc=<svc-name> container
+docker-exec-sh: check-env-vars ## get shell for svc=<svc-name> container
 	@docker exec -it ${svc} sh
 
-run-nrp-bash: check-env-vars ## run NRP bash
+docker-run-nrp-bash: check-env-vars ## run NRP bash
 	docker run -it $(IMAGE_NAME):$(IMAGE_VERSION) bash
 
-test-nginx-config: check-env-vars ## text nginx config
+docker-test-nginx-config: check-env-vars ## text nginx config
 	@docker run -it $(IMAGE_NAME):$(IMAGE_VERSION) nginx -t
 
 # To get <volume-name> use `docker volume ls`
 # make run-volume name=nginx-reverse-proxy_letsencrypt
-run-volume: check-env-vars ## run container to check volume content for name=<volume-name>
+docker-run-volume: check-env-vars ## run container to check volume content for name=<volume-name>
 	docker run -it --rm -v $(name):/volume-data --name volume-check busybox
 
 # used for multi-platform builds
@@ -87,15 +87,15 @@ use-docker-container-builder:
 	@docker buildx use docker-container
 
 # NRP image
-build: ## build NRP image
+docker-build: ## build NRP image
 	docker build --load -f ./Dockerfile --build-arg IMAGE_VERSION=$(IMAGE_VERSION) --build-arg IMAGE_NAME=$(IMAGE_NAME) -t $(IMAGE_NAME):$(IMAGE_VERSION) --platform linux/arm64 .
 
-build-n-push: ## build NRP image
+docker-build-n-push: ## build NRP image
 	docker buildx build --builder docker-container --platform linux/amd64,linux/arm64 --push -f ./Dockerfile --build-arg IMAGE_VERSION=$(IMAGE_VERSION) --build-arg IMAGE_NAME=$(IMAGE_NAME) -t $(IMAGE_NAME):$(IMAGE_VERSION) -t $(IMAGE_NAME):latest .
 
-tag-latest: ## tag NRP image as latest
+docker-tag-latest: ## tag NRP image as latest
 	@docker tag $(IMAGE_NAME):$(IMAGE_VERSION) $(IMAGE_NAME):latest
 
-push: ## push latest image to docker hub
+docker-push: ## push latest image to docker hub
 	@docker push docker.io/$(IMAGE_NAME):$(IMAGE_VERSION)
 	@docker push docker.io/$(IMAGE_NAME):latest
