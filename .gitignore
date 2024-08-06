@@ -2,21 +2,15 @@
 .editorconfig
 .idea
 .npmrc
-.vscode
 *.crt
 *.key
 *.pem
 *.log
 npm-debug.log
-project.env
-backup/*
+.env
 coverage
-dist/*
 devops/version/
-!dist/.gitkeep
 logs/*
-node_modules/
-devops/version/
 tmp
 # nrp.yaml - env vars used to hide values
 conf.d

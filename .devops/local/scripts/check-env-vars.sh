@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 scriptDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$scriptDir/blablo.sh"
-source "$scriptDir/checkProjectEnvFile.sh"
+source "$scriptDir/checkEnvFile.sh"
 
 BLUE='\033[0;34m'
 LBLUE='\033[1;36m'
@@ -11,7 +11,7 @@ YELLOW=$(tput setaf 3)
 CYAN1='\033[38;5;51m'
 NC='\033[0m' # No Color
 
-projectEnvFile=${1:-'project.env.dist'}
+envFileDist=${1:-'.env.dist'}
 
 function checkVar () {
     blablo.log "${CYAN1}$1${NC}";
@@ -31,14 +31,14 @@ function checkVar () {
     fi
 }
 
-blablo.cleanLog "🎯 Check ${CYAN1}'project.env'${NC} vars"
-checkProjectEnvFile $projectEnvFile
+blablo.cleanLog "🎯 Check ${CYAN1}'.env'${NC} vars"
+checkEnvFileDist $envFileDist
 res=$?
 if [ "$res" -eq 1 ]; then
   exit 1
 fi
 
-varsToCheck=($(grep -E -o '^[^#]+=' "$projectEnvFile" | sed 's/=.*//' | grep -v "^\s*$"))
+varsToCheck=($(grep -E -o '^[^#]+=' "$envFileDist" | sed 's/=.*//' | grep -v "^\s*$"))
 
 blablo.cleanLog "";
 for var in "${varsToCheck[@]}"; do

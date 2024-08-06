@@ -63,7 +63,7 @@
 
 4. Add services to `nrp.yaml`
   
-    * Assume your services executed on the same host as nginx, and host has local IP = `192.168.0.111`. Also you had configured `service1.domain.tld` & `service1.domain.tld` redirect to your ISP public IP. And your services listening ports `9000` and `9001` respectfuly 
+    * Assume your services executed on the same host as nginx, and host has local IP = `192.168.0.111`. Also you had configured `service1.domain.tld` & `service1.domain.tld` redirect to your ISP public IP. And your services listening ports `9000` and `9001` respectfuly
     * Create `nrp.yaml` file in root repo folder, e.g.:
 
       ```yaml
