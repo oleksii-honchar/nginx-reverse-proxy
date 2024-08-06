@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.7.0...v0.7.1) (2024-08-06)
+
+
+### Bug Fixes
+
+* fix makefile targets ([c72527f](https://github.com/oleksii-honchar/nginx-reverse-proxy/commit/c72527fb6a7f78a22f373af860537b9feadc7c8b))
+
 ## [0.7.0](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.6.0...v0.7.0) (2024-08-06)
 
 
