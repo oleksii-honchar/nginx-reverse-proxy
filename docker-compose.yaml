@@ -1,10 +1,10 @@
 services:
   nrp:
     env_file:
-      - project.env
+      - .env
     environment:
       - TZ=Europe/Madrid
-    image: tuiteraz/nginx-reverse-proxy:${LATEST_VERSION}
+    image: tuiteraz/nginx-reverse-proxy:${IMAGE_VERSION}
     restart: unless-stopped
     container_name: nrp
     ports:
@@ -43,6 +43,32 @@ services:
       - /dev/disk0:/dev/disk # This directory, where disk I/O stats are available: diskutil list
       - /etc/machine-id:/etc/machine-id:ro
       - /var/lib/dbus/machine-id:/var/lib/dbus/machine-id:ro
+    networks:
+      multi-proxy:
+    restart: unless-stopped
+
+  service1:
+    env_file:
+      - .env
+    environment:
+      - TZ=Europe/Madrid
+    image: tuiteraz/fastify-tmpl:1.1.5
+    container_name: nrp-service1
+    ports:
+      - 9100:9000
+    networks:
+      multi-proxy:
+    restart: unless-stopped
+
+  service2:
+    env_file:
+      - .env
+    environment:
+      - TZ=Europe/Madrid
+    image: tuiteraz/fastify-tmpl:1.1.5
+    container_name: nrp-service2
+    ports:
+      - 9200:9000
     networks:
       multi-proxy:
     restart: unless-stopped

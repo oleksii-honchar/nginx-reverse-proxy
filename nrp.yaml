@@ -13,10 +13,9 @@ services:
   domainName: $SVC1_DOMAIN
   domainRegistrant: route53
 - name: test2
-  use: no
-  serviceIp: $SVC1_IP
-  servicePort: $SVC1_PORT
-  domainName: $SVC1_DOMAIN
+  serviceIp: $SVC2_IP
+  servicePort: $SVC2_PORT
+  domainName: $SVC2_DOMAIN
   domainRegistrant: route53
   cors: yes
   https: 

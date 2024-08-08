@@ -51,7 +51,7 @@
 
 **Note:** Nginx-Reverse-Proxy = NRP
 
-1. Copy `project.env.dist` to `project.env` and set the values
+1. Copy `.env.dist` to `.env` and set the values
     * AWS related values make sense to use only if you plan to use automatic public IP check & update.
     * If you plan to use Route53 IP automatic updates for your current public IP, it is recommended to emit credentials with limited to Route53 access only via AWS IAM.
 2. Set desired sub/domain(e.g. `your.domain.tld`) `A` record pointing to the ISP public IP ([portchecker](https://portchecker.co/) can help to check public IP and open ports)
@@ -91,11 +91,12 @@
       * use your real email for SSL certificates
       * additionaly you can hide sensitive info using env vars (read more in [nrp-cli "Adding new service" doc section](https://github.com/oleksii-honchar/nrp-cli#adding-new-service))
 
-5. Start NRP by `make restart`
+5. Start NRP by `make docker-restart`
 
     * [`nrp-cli`](https://github.com/oleksii-honchar/nrp-cli) internally will created necessary `nginx` config files and start `certbot` if https needed (read more about config schema options in [nrp-cli docs](https://github.com/oleksii-honchar/nrp-cli#configuration-schema))
     * `dnsmasq` and `squid` config wil be generated according to `nrp.yaml`
     * `certbot` will run every 1d to renew certificates via `cron`
+    * test API services will be started using "[tuiteraz/fastify-tmpl](https://github.com/oleksii-honchar/fastify-tmpl)" docker image
 
     **Note**: at this point described services should be available locally using their domains in browser
 6. Other network clients access to proxied services
@@ -132,10 +133,9 @@
 
 ## Local development
 
-* after changes updated, bump `latest-version.txt` file
-* `make build` - build docker image
-* `make tag-latest` - tag latest"
-* `make push` - pusht new image (including "latest")
+* Make changes, create PR, merge it.
+* Then "release please" will pick it up
+* On a new tag "Build Docker image and push to Docker Hub" actions will do the build and publication
 
 ## Solution description
 
@@ -295,4 +295,4 @@ http_access allow all
 
 * if certbot failed to make request, try dryRun option for testing and check docker network to be `bridge` without additonal subnets and static ip defined
 
-* if something goes wrong and you miss details - set LOG_LEVEL=debug in `project.env` and read the logs.
+* if something goes wrong and you miss details - set LOG_LEVEL=debug in `.env` and read the logs.
