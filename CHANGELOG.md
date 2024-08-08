@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.7.1...v0.8.0) (2024-08-08)
+
+
+### Features
+
+* add example service config; rename project.env to .env; update readme ([2de76a1](https://github.com/oleksii-honchar/nginx-reverse-proxy/commit/2de76a177829402c0a4302042af48df3e957a262))
+
 ## [0.7.1](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.7.0...v0.7.1) (2024-08-06)
 
 
