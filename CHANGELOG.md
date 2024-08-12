@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.8.0...v0.8.1) (2024-08-12)
+
+
+### Bug Fixes
+
+* expose metrics port ([b0e76d9](https://github.com/oleksii-honchar/nginx-reverse-proxy/commit/b0e76d9d3bd112d7e138d224d6f4c52029f14244))
+
 ## [0.8.0](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.7.1...v0.8.0) (2024-08-08)
 
 
