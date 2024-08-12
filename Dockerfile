@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:experimental
-FROM tuiteraz/nginx-more:1.27.0-1.0.5
+FROM tuiteraz/nginx-more:1.27.0-1.0.6
 
 # NRP image name and version to print on start
 ARG IMAGE_VERSION
@@ -49,7 +49,7 @@ RUN wget https://github.com/oleksii-honchar/nrp-cli/releases/download/$NRP_CLI_V
 
 #---
 
-EXPOSE 53 53/udp 80 443 3128 9020
+EXPOSE 53 53/udp 80 443 3128
 
 COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
