@@ -13,11 +13,9 @@ ifneq (,$(wildcard ./.env))
     export
 endif
 
-IMAGE_VERSION := $(shell yq -r '.version' project.yaml)
-IMAGE_NAME := $(shell yq -r '.name' project.yaml)
-LOG_LEVEL := $(shell yq -r '.logLevel' project.yaml)
-
-export LOG_LEVEL
+IMAGE_VERSION = $(shell yq -r '.version' project.yaml)
+IMAGE_NAME = $(shell yq -r '.name' project.yaml)
+LOG_LEVEL = $(shell yq -r '.logLevel' project.yaml)
 
 .PHONY: help
 
