@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.8.1...v0.9.0) (2024-08-12)
+
+
+### Features
+
+* enable nginx-more metrics ([3048828](https://github.com/oleksii-honchar/nginx-reverse-proxy/commit/30488286fd3361c2d4647955dd7b3a87dade5b9e))
+
 ## [0.8.1](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.8.0...v0.8.1) (2024-08-12)
 
 
