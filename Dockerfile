@@ -49,7 +49,7 @@ RUN wget https://github.com/oleksii-honchar/nrp-cli/releases/download/$NRP_CLI_V
 
 #---
 
-EXPOSE 53 53/udp 80 443 3128 
+EXPOSE 53 53/udp 80 443 3128 9020
 
 COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
