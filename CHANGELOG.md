@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.2](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.9.1...v0.9.2) (2024-08-17)
+
+
+### Bug Fixes
+
+* fix json log format ([f42adbf](https://github.com/oleksii-honchar/nginx-reverse-proxy/commit/f42adbf3038f18fe2f1f38a1d88385e5ff5048c6))
+
 ## [0.9.1](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.9.0...v0.9.1) (2024-08-17)
 
 
