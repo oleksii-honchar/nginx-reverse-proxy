@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.0](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.9.2...v0.10.0) (2024-08-18)
+
+
+### Features
+
+* update nrp-cli  to v0.9.0 ([79b54de](https://github.com/oleksii-honchar/nginx-reverse-proxy/commit/79b54de67176e9455820a90403f4d1567d87468f))
+
 ## [0.9.2](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.9.1...v0.9.2) (2024-08-17)
 
 
