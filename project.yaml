@@ -1,4 +1,4 @@
 name: tuiteraz/nginx-reverse-proxy
 containerName: nginx-reverse-proxy
 logLevel: info
-version: 0.10.0
+version: 0.10.1

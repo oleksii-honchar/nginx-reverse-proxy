@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.1](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.10.0...v0.10.1) (2024-09-22)
+
+
+### Bug Fixes
+
+* exlcude .well-know url paths from blocking ([e7df5f0](https://github.com/oleksii-honchar/nginx-reverse-proxy/commit/e7df5f06e533e49e76d5d323187ac0694b250fc6))
+
 ## [0.10.0](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.9.2...v0.10.0) (2024-08-18)
 
 
