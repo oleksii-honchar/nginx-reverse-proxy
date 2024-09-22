@@ -151,7 +151,7 @@ Here is the deployment diagram for the solution:
 1. External user flow
     * (1) - External internet user makes request to `your-domain.tld`
     * (2) - DNS (AWS in this case) resolve it to the ISP Public IP 
-    * (3) - When request reaches local network ingress, router it redirects it to local NRPs `:80` or `:443` ports. Then it resolves to configures local network service according to NRP configuration
+    * (3) - When request reaches local network ingress, router it redirects it to local NRPs `:80` or `:443` ports. Then it resolves to configured local network service according to NRP configuration
 2. Local user flow
    * (4) - User from the same residential network make request to the `your-domain.tld` from his browser. And his network already configured to use proxy. Which in fact is `Squid` proxy server running in the docker-compose configuration with NRP 
    * (5) - `Squid` configured to resolve domains using `dnsmasq`. Which is aware of `your-domain.tld` to be forwarded to NRP `multi-proxy` network IP. 
