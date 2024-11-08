@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.2](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.10.1...v0.10.2) (2024-11-08)
+
+
+### Bug Fixes
+
+* bump version ([f568c25](https://github.com/oleksii-honchar/nginx-reverse-proxy/commit/f568c257e961042701cfee0c2ba8d9d43a2dc7dc))
+
 ## [0.10.1](https://github.com/oleksii-honchar/nginx-reverse-proxy/compare/v0.10.0...v0.10.1) (2024-09-22)
 
 
