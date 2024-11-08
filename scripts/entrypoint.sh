@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -o pipefail
 echo "${IMAGE_NAME}:${IMAGE_VERSION}"
 
 # Docker
@@ -25,7 +25,9 @@ cat < $SQUID_CACHE_LOG_FILE >/dev/stdout &
 # nrp-cli - generate nginx, squid & dnsmasq configs, also request SSL cert if needed
 value="${CERTBOT_WAIT:-false}"
 level="${LOG_LEVEL:-info}"
-/usr/local/bin/nrp-cli -config=/etc/nrp.yaml -log-level=$level -check-and-update-public-ip -force
-/usr/local/bin/nrp-cli -config=/etc/nrp.yaml -log-level=$level -certbot-wait=$value
+SUPERVISOR_PROCESS_NAME="nrp-cli" \
+/usr/local/bin/log-processor /usr/local/bin/nrp-cli -config=/etc/nrp.yaml -log-level=$level -check-and-update-public-ip -force 
+SUPERVISOR_PROCESS_NAME="nrp-cli" \
+/usr/local/bin/log-processor /usr/local/bin/nrp-cli -config=/etc/nrp.yaml -log-level=$level -certbot-wait=$value
 
 exec "$@"

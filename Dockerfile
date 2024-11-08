@@ -1,5 +1,5 @@
 # syntax = docker/dockerfile:experimental
-FROM tuiteraz/nginx-more:1.27.0-1.0.6
+FROM tuiteraz/nginx-more:1.27.2-1.2.0
 
 # NRP image name and version to print on start
 ARG IMAGE_VERSION
@@ -14,10 +14,8 @@ RUN apk add --no-cache certbot openssl dnsmasq-dnssec supervisor squid bash open
 
 # Supervisor
 RUN mkdir /etc/supervisor
-COPY ./scripts/prefix-log.bash /usr/local/bin/prefix-log
-COPY ./scripts/prefix-log-nginx.bash /usr/local/bin/prefix-log-nginx
-RUN chmod +x /usr/local/bin/prefix-log
-RUN chmod +x /usr/local/bin/prefix-log-nginx
+COPY ./scripts/log-processor.bash /usr/local/bin/log-processor
+RUN chmod +x /usr/local/bin/log-processor
 
 # Squid
 ENV SQUID_LOGS_DIR="/var/log/squid"
@@ -29,18 +27,11 @@ RUN mkdir -p $SQUID_LOGS_DIR && \
 # Certbot
 RUN mkdir -p /etc/letsencrypt
 
-COPY ./scripts/prefix-log-certbot.bash /usr/local/bin/prefix-log-certbot
-RUN chmod +x /usr/local/bin/prefix-log-certbot
-
 # Nginx config
 COPY ./configs/nginx /etc/nginx
 
-# nrp-cli
-COPY ./scripts/prefix-log-nrp.bash /usr/local/bin/prefix-log-nrp
-RUN chmod +x /usr/local/bin/prefix-log-nrp
-
 RUN mkdir /etc/nrp
-ENV NRP_CLI_VER=v0.9.0
+ENV NRP_CLI_VER=v0.10.2
 RUN wget https://github.com/oleksii-honchar/nrp-cli/releases/download/$NRP_CLI_VER/nrp-cli-linux-$NRP_CLI_VER.tar.gz && \
   tar xzvf nrp-cli-linux-$NRP_CLI_VER.tar.gz && \
   cp ./nrp-cli-linux /usr/local/bin/nrp-cli &&\
