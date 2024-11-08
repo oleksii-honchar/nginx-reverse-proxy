@@ -296,3 +296,4 @@ http_access allow all
 * if certbot failed to make request, try dryRun option for testing and check docker network to be `bridge` without additonal subnets and static ip defined
 
 * if something goes wrong and you miss details - set LOG_LEVEL=debug in `.env` and read the logs.
+
