@@ -69,7 +69,7 @@
       ```yaml
       letsencrypt:
         email: "you-name@gmail.com"
-        dryRun: false
+        dryRun: no
       services:
       - name: service1 # plain HTTP
         serviceIp: 192.168.0.111
@@ -294,6 +294,8 @@ http_access allow all
 ## Troubleshooting
 
 * if certbot failed to make request, try dryRun option for testing and check docker network to be `bridge` without additonal subnets and static ip defined
+  * ensure 80 port available from internet, e.g. `telnet <your-external-ip> 80`
+  * check if you're behind CG-NAT(shared external IP) - your ISP IP is different from your public IP
 
 * if something goes wrong and you miss details - set LOG_LEVEL=debug in `.env` and read the logs.
 

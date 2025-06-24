@@ -25,7 +25,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(firstword $(MAKEFILE_LIST)) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 # Misc
-check-env-vars: # check env vars mentioned in project.env.dist to be filled in project.env
+check-env-vars: # check env vars mentioned in .env.dist to be filled in .env
 	@bash ./.devops/local/scripts/check-env-vars.sh
 
 # Docker
@@ -50,6 +50,9 @@ docker-up: check-env-vars ## docker up, or svc=<svc-name>
 
 docker-down: check-env-vars ## docker down, or svc=<svc-name>
 	@docker compose down ${svc}
+
+docker-down-all: check-env-vars ## docker all down
+	@docker compose down --remove-orphans
 
 .ONESHELL:
 docker-restart: check-env-vars  ## restart all

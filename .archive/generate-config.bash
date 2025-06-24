@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 BOLD_ON='\033[1m'
 BOLD_OFF='\033[22m'
 
-projectEnvFile=${1:-'project.env'}
+projectEnvFile=${1:-'.env'}
 
 blablo.cleanLog "🎯 Init configuration files"
 checkProjectEnvFile "${projectEnvFile}"

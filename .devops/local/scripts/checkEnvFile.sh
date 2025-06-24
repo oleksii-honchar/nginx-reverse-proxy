@@ -18,7 +18,7 @@ function checkEnvFile () {
       return 0
   else
       blablo.cleanLog "${CPEF_RED}No ${CPEF_BOLD_ON}'${projectEnvFile}'${CPEF_BOLD_OFF} file found in: ${CPEF_NC}$PWD"
-      blablo.cleanLog "${CPEF_YELLOW}Please create copy of ${CPEF_BOLD_ON}'project.env.dist'${CPEF_BOLD_OFF} as ${CPEF_BOLD_ON}'project.env'${CPEF_BOLD_OFF} and fill the placeholders ${CPEF_NC}"
+      blablo.cleanLog "${CPEF_YELLOW}Please create copy of ${CPEF_BOLD_ON}'.env.dist'${CPEF_BOLD_OFF} as ${CPEF_BOLD_ON}'.env'${CPEF_BOLD_OFF} and fill the placeholders ${CPEF_NC}"
       return 1
   fi
 }

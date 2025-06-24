@@ -32,7 +32,6 @@ function checkVar () {
 }
 
 blablo.cleanLog "🎯 Check ${CYAN1}'.env'${NC} vars"
-checkEnvFileDist $envFileDist
 res=$?
 if [ "$res" -eq 1 ]; then
   exit 1
